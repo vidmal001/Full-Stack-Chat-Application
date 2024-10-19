@@ -12,13 +12,13 @@ const SignUp = () => {
     gender: "",
   });
 
-  const { signup, loading } = useSignup()
+  const { signup, loading } = useSignup();
 
   const handleCheckboxChange = (gender) => {
     setInputs({ ...inputs, gender });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await signup(inputs);
   };
@@ -106,8 +106,15 @@ const SignUp = () => {
           </Link>
           {/*Sign Up button */}
           <div>
-            <button className="btn btn-block btn-sm mt-2 border border-slate-700">
-              Sign Up
+            <button
+              className="btn btn-block btn-sm mt-2 border border-slate-700"
+              disabled={loading} // disable the button if loading is true
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Sign Up"
+              )}
             </button>
           </div>
         </form>
