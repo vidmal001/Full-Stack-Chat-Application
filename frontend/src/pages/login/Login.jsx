@@ -19,7 +19,7 @@ const Login = () => {
         {/*Heading */}
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Login
-          <span className="text-blue-500"> ChatApp</span>
+          <span className="text-blue-500"> Chatify</span>
         </h1>
 
         <form onSubmit={handleSubmit}>
@@ -59,7 +59,7 @@ const Login = () => {
           </Link>
           {/*Login button */}
           <div>
-            <button className="btn btn-block btn-sm mt-2" disabled={loading}>
+            <button className="btn btn-block btn-sm mt-2 mb-2" disabled={loading}>
               {loading ? (
                 <span className="loading loading-spinner"></span>
               ) : (
